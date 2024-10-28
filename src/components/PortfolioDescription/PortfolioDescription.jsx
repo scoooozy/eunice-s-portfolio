@@ -225,7 +225,7 @@ const PortfolioDescription = () => {
           />
           <div className="description-text">
             <h2>{item.title}</h2>
-            <p>{item.materials}</p>
+            <p className="materials">{item.materials}</p>
             <p>{item.description}</p>
           </div>
         </div>

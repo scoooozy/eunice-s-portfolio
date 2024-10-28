@@ -79,6 +79,9 @@
 .exit-button:hover {
     color: #555;
 }
+.materials{
+    font-weight: 600;
+}
 @media(max-width:500px){
     .description-content{
         flex-direction: column;
