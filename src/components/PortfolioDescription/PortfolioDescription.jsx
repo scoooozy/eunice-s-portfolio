@@ -35,7 +35,8 @@ const PortfolioDescription = () => {
   const getPrevId = () => (itemId > 1 ? itemId - 1 : portfolioItems.length);
 
   return (
-    <div className="portfolio-description">
+    <div className="container">
+      <div className="portfolio-description">
       <Link to="/portfolio" className="exit-button">
         <svg
           width="24"
@@ -63,6 +64,7 @@ const PortfolioDescription = () => {
           Next
         </Link>
       </div>
+    </div>
     </div>
   );
 };
