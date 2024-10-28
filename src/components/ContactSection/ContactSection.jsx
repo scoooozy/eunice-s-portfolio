@@ -7,17 +7,17 @@ const ContactSection = () => {
       <div className="contact-card">
         <FaMapMarkerAlt className="icon" />
         <h3>My Location</h3>
-        <p>1234 Beverly Hills, CA</p>
+        <p>Los Angeles, CA</p>
       </div>
       <div className="contact-card">
         <FaPhoneAlt className="icon" />
         <h3>Phone</h3>
-        <p>(123) 456-7890</p>
+        <p>(424) 599-0740</p>
       </div>
       <div className="contact-card">
         <FaEnvelope className="icon" />
         <h3>Email</h3>
-        <p>info@example.com</p>
+        <p>eunicemoon7@gmail.com</p>
       </div>
     </div>
   );

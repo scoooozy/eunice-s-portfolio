@@ -101,7 +101,7 @@ const portfolioItems = [
     image:
       "https://firebasestorage.googleapis.com/v0/b/more-task.appspot.com/o/images%2F20.png?alt=media&token=50480f17-5190-4078-acb5-bc486719850b ",
     description:
-      " Each mask is made from my family’s faces. This project shows the influences of other people on you. The mask attached to the heart is the main person and all the other masks represent different people. You don’t know who these people are because you can’t see their faces. There is even a mask underneath the canvas. For this project, I wanted to bring awareness to the outside influences other people may have on you. It may be so stressful that it can even lead to your heart exploding out of your body. ",
+      "For this project, I crafted a heart out of clay, its surface textured and uneven, symbolizing the imperfections and challenges of life. Each hole represents the pain and struggle it received. From its sides, thin, twisted wires emerge, curling and spiraling outward in chaotic directions, representing struggle and conflict. Some wires are taut, suggesting tension, while others hang loosely, depicting moments of release and vulnerability. The interplay of clay and wire creates a striking contrast, embodying the heart's strength alongside its fragility. This piece captures the complex emotions associated with struggle, emphasizing that even in hardship, there is beauty and a story to be told. ",
   },
   {
     id: 12,
@@ -175,7 +175,7 @@ const portfolioItems = [
     materials: "Clay, wire",
     image:
       "https://firebasestorage.googleapis.com/v0/b/more-task.appspot.com/o/images%2F11.png?alt=media&token=22c7f76b-43e8-4657-87ae-94b611d6352a",
-    description: "For this project, I crafted a heart out of clay, its surface textured and uneven, symbolizing the imperfections and challenges of life. Each hole represents the pain and struggle it received. From its sides, thin, twisted wires emerge, curling and spiraling outward in chaotic directions, representing struggle and conflict. Some wires are taut, suggesting tension, while others hang loosely, depicting moments of release and vulnerability. The interplay of clay and wire creates a striking contrast, embodying the heart's strength alongside its fragility. This piece captures the complex emotions associated with struggle, emphasizing that even in hardship, there is beauty and a story to be told.",
+    description: "Each mask is made from my family’s faces. This project shows the influences of other people on you. The mask attached to the heart is the main person and all the other masks represent different people. You don’t know who these people are because you can’t see their faces. There is even a mask underneath the canvas. For this project, I wanted to bring awareness to the outside influences other people may have on you. It may be so stressful that it can even lead to your heart exploding out of your body. ",
   },
   {
     id: 21,
