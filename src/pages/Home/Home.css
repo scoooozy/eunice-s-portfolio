@@ -79,6 +79,7 @@
   aspect-ratio: 4/3;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  color: white;
 }
 
 .featured-item:hover {
