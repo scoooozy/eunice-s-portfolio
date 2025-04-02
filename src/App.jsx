@@ -4,6 +4,7 @@ import Portfolio from "./pages/Portfolio/Portfolio";
 import Contact from "./pages/Contact/Contact";
 import Navbar from "./components/Navbar/Navbar";
 import PortfolioDescription from "./components/PortfolioDescription/PortfolioDescription";
+import Footer from './components/Footer/Footer';
 import "./App.css";
 import "./index.css";
 
@@ -20,6 +21,7 @@ function AppContent() {
         <Route path="/portfolio/:id" element={<PortfolioDescription />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </>
   );
 }

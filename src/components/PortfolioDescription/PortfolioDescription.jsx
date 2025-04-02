@@ -1,4 +1,6 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import "./PortfolioDescription.css";
 
 const portfolioItems = [
@@ -37,7 +39,7 @@ const portfolioItems = [
     image:
       "https://firebasestorage.googleapis.com/v0/b/more-task.appspot.com/o/images%2F4.png?alt=media&token=4447d481-01dc-44ad-9178-cbe90b18f3f6",
     description:
-      "For this project, I wanted to portray Korean traditional writing instruments in the Minhwa style. The scene is lively and vibrant, capturing the essence of Korean folk art with the importance of color and simplicity. The painting includes a chest with a low table, rolls of paper, and brushes. I painted in a blend of bold and earthy colors. This portrayal captures both the beauty and cultural symbolism embedded in these traditional Korean furnishings, showcasing the Minhwa style’s charm and narrative quality.",
+      "For this project, I wanted to portray Korean traditional writing instruments in the Minhwa style. The scene is lively and vibrant, capturing the essence of Korean folk art with the importance of color and simplicity. The painting includes a chest with a low table, rolls of paper, and brushes. I painted in a blend of bold and earthy colors. This portrayal captures both the beauty and cultural symbolism embedded in these traditional Korean furnishings, showcasing the Minhwa style's charm and narrative quality.",
   },
   {
     id: 5,
@@ -55,7 +57,7 @@ const portfolioItems = [
     image:
       "https://firebasestorage.googleapis.com/v0/b/more-task.appspot.com/o/images%2F6.png?alt=media&token=318141e7-7f30-4943-aaba-7d469c07a8c3",
     description:
-      " I designed a childhood toy—a car, where you pull the string and the top ball rotates using charcoal, aiming to capture both its texture and nostalgic charm. The car’s edges are like a soccer ball, another used toy for children and I’ve focused on the rounded corners and worn wheels, blending the charcoal to give it a sense of age and warmth. Shadows and highlights create a slightly three-dimensional effect, making it feel as though it could roll right off the page. I added subtle smudges to hint at tiny dents and scratches as if it has a history of play. The background is softly shaded to keep the focus on the toy, giving it a timeless, almost dreamlike quality that recalls those simpler childhood days.",
+      " I designed a childhood toy—a car, where you pull the string and the top ball rotates using charcoal, aiming to capture both its texture and nostalgic charm. The car's edges are like a soccer ball, another used toy for children and I've focused on the rounded corners and worn wheels, blending the charcoal to give it a sense of age and warmth. Shadows and highlights create a slightly three-dimensional effect, making it feel as though it could roll right off the page. I added subtle smudges to hint at tiny dents and scratches as if it has a history of play. The background is softly shaded to keep the focus on the toy, giving it a timeless, almost dreamlike quality that recalls those simpler childhood days.",
   },
   {
     id: 7,
@@ -74,7 +76,7 @@ const portfolioItems = [
     image:
       "https://firebasestorage.googleapis.com/v0/b/more-task.appspot.com/o/images%2F8.png?alt=media&token=574cce0d-1583-483a-a212-a63866852986",
     description:
-      "For these projects, I painted moran, or peonies birds, and nature, in the Minhwa style on rice paper. I wanted to capture the lively, symbolic energy. I chose bold, vibrant colors—deep reds, rich pinks, and hints of gold—for the petals, letting each brushstroke create layers and texture on the delicate rice paper. The peonies are full and blooming, with leaves and stems extending outward in dynamic, almost playful curves. I emphasized their round, lush shapes, using exaggerated lines to convey their prosperity and beauty. The rice paper absorbs the pigments differently, giving each petal a soft, slightly uneven look that adds character and depth. I hoped to honor the traditional Minhwa style, allowing the flowers to feel both whimsical and powerful, as though they’re blossoming right off the page.",
+      "For these projects, I painted moran, or peonies birds, and nature, in the Minhwa style on rice paper. I wanted to capture the lively, symbolic energy. I chose bold, vibrant colors—deep reds, rich pinks, and hints of gold—for the petals, letting each brushstroke create layers and texture on the delicate rice paper. The peonies are full and blooming, with leaves and stems extending outward in dynamic, almost playful curves. I emphasized their round, lush shapes, using exaggerated lines to convey their prosperity and beauty. The rice paper absorbs the pigments differently, giving each petal a soft, slightly uneven look that adds character and depth. I hoped to honor the traditional Minhwa style, allowing the flowers to feel both whimsical and powerful, as though they're blossoming right off the page.",
   },
   {
     id: 9,
@@ -167,7 +169,7 @@ const portfolioItems = [
     materials: "Colored pencil on paper",
     image:
       "https://firebasestorage.googleapis.com/v0/b/more-task.appspot.com/o/images%2F19.png?alt=media&token=2a407e0f-c372-4600-b8e5-8ce6f722b278",
-    description: "While exploring multiple mediums, I came across colored pencils which have the ability to express and portray color intricately. I came across a book with famous paintings and I came across Giuseppe Arcimboldo’s paintings. I was intrigued by the use of color, making it seem as if the art came to life. I wanted to portray the liveliness of fruits and vegetables. In the picture on the right, I brought to attention the beauty of nature and birds. Different animals live in the same habitat but they can coexist in peace. ",
+    description: "While exploring multiple mediums, I came across colored pencils which have the ability to express and portray color intricately. I came across a book with famous paintings and I came across Giuseppe Arcimboldo's paintings. I was intrigued by the use of color, making it seem as if the art came to life. I wanted to portray the liveliness of fruits and vegetables. In the picture on the right, I brought to attention the beauty of nature and birds. Different animals live in the same habitat but they can coexist in peace. ",
   },
   {
     id: 20,
@@ -175,7 +177,7 @@ const portfolioItems = [
     materials: "Clay, wire",
     image:
       "https://firebasestorage.googleapis.com/v0/b/more-task.appspot.com/o/images%2F11.png?alt=media&token=22c7f76b-43e8-4657-87ae-94b611d6352a",
-    description: "Each mask is made from my family’s faces. This project shows the influences of other people on you. The mask attached to the heart is the main person and all the other masks represent different people. You don’t know who these people are because you can’t see their faces. There is even a mask underneath the canvas. For this project, I wanted to bring awareness to the outside influences other people may have on you. It may be so stressful that it can even lead to your heart exploding out of your body. ",
+    description: "Each mask is made from my family's faces. This project shows the influences of other people on you. The mask attached to the heart is the main person and all the other masks represent different people. You don't know who these people are because you can't see their faces. There is even a mask underneath the canvas. For this project, I wanted to bring awareness to the outside influences other people may have on you. It may be so stressful that it can even lead to your heart exploding out of your body. ",
   },
   {
     id: 21,
@@ -196,16 +198,52 @@ const portfolioItems = [
 
 const PortfolioDescription = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const itemId = parseInt(id);
   const item = portfolioItems.find((item) => item.id === itemId);
+  const [isLoading, setIsLoading] = useState(true);
 
   const getNextId = () => (itemId < portfolioItems.length ? itemId + 1 : 1);
   const getPrevId = () => (itemId > 1 ? itemId - 1 : portfolioItems.length);
 
+  useEffect(() => {
+    setIsLoading(true);
+    const timer = setTimeout(() => setIsLoading(false), 500);
+    return () => clearTimeout(timer);
+  }, [id]);
+
+  const handleKeyPress = (e) => {
+    if (e.key === "ArrowLeft") {
+      navigate(`/portfolio/${getPrevId()}`);
+    } else if (e.key === "ArrowRight") {
+      navigate(`/portfolio/${getNextId()}`);
+    } else if (e.key === "Escape") {
+      navigate("/portfolio");
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyPress);
+    return () => window.removeEventListener("keydown", handleKeyPress);
+  }, [id]);
+
+  if (!item) {
+    return (
+      <div className="container">
+        <div className="portfolio-description">
+          <h2>Project not found</h2>
+          <Link to="/portfolio" className="nav-button">
+            Return to Portfolio
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="container">
       <div className="portfolio-description">
-        <Link to="/portfolio" className="exit-button">
+        <Link to="/portfolio" className="exit-button" aria-label="Close">
           <svg
             width="24"
             height="24"
@@ -213,16 +251,19 @@ const PortfolioDescription = () => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path d="M18 6L6 18" stroke="black" strokeWidth="2" />
-            <path d="M6 6L18 18" stroke="black" strokeWidth="2" />
+            <path d="M18 6L6 18" stroke="currentColor" strokeWidth="2" />
+            <path d="M6 6L18 18" stroke="currentColor" strokeWidth="2" />
           </svg>
         </Link>
-        <div className="description-content">
-          <img
-            src={item.image}
-            alt={item.title}
-            className="description-image"
-          />
+        <div className={`description-content ${isLoading ? "loading" : ""}`}>
+          <div className="image-container">
+            <img
+              src={item.image}
+              alt={item.title}
+              className="description-image"
+              loading="lazy"
+            />
+          </div>
           <div className="description-text">
             <h2>{item.title}</h2>
             <p className="materials">{item.materials}</p>
@@ -231,10 +272,10 @@ const PortfolioDescription = () => {
         </div>
         <div className="nav-buttons">
           <Link to={`/portfolio/${getPrevId()}`} className="nav-button">
-            Previous
+            <FaArrowLeft /> Previous
           </Link>
           <Link to={`/portfolio/${getNextId()}`} className="nav-button">
-            Next
+            Next <FaArrowRight />
           </Link>
         </div>
       </div>
